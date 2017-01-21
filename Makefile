@@ -195,7 +195,7 @@ export KBUILD_BUILDHOST := $(SUBARCH)
 #ARCH		?= $(SUBARCH)
 ARCH		?= arm
 #CROSS_COMPILE	?= $(CONFIG_CROSS_COMPILE:"%"=%)
-CROSS_COMPILE	?= /opt/toolchains/arm-eabi-4.6/bin/arm-eabi-
+CROSS_COMPILE	?= /home/astrit/i8200-kernel/toolchain/arm-eabi-4.6/bin/arm-eabi-
 
 # Architecture as present in compile.h
 UTS_MACHINE 	:= $(ARCH)
@@ -350,10 +350,10 @@ CHECK		= sparse
 
 CHECKFLAGS     := -D__linux__ -Dlinux -D__STDC__ -Dunix -D__unix__ \
 		  -Wbitwise -Wno-return-void $(CF)
-CFLAGS_MODULE   =
+CFLAGS_MODULE   = -fno-pic -mcpu=cortex-a9 -mtune=cortex-a9 -mfpu=neon-vfpv4
 AFLAGS_MODULE   =
 LDFLAGS_MODULE  =
-CFLAGS_KERNEL	=
+CFLAGS_KERNEL	= -fgcse-lm -fgcse-sm -fsched-spec-load -ffast-math -fsingle-precision-constant -mtune=cortex-a9 -marm -mfpu=neon-vfpv4 -funroll-loops
 AFLAGS_KERNEL	=
 CFLAGS_GCOV	= -fprofile-arcs -ftest-coverage
 
