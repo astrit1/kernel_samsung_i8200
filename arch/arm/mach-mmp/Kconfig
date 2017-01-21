@@ -574,6 +574,12 @@ config SEC_TEMP_BOARD
 	depends on SEC_THERMISTOR
 	help
 	  Use TEMP_BOARD thermistor instead of TEMP_RF for temperature
+	  
+config FORCE_FAST_CHARGE
+	bool "Force user-defined charging currents"
+	default n
+	help
+	  Enable the ability of forcing user-defined charging currents.
 
 #
 # Near Field Communication (NFC) devices
