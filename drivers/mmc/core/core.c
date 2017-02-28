@@ -58,8 +58,8 @@ struct device *sec_sdcard_dev_t;
  * Enabling software CRCs on the data blocks can be a significant (30%)
  * performance cost, and for other reasons may not always be desired.
  * So we allow it it to be disabled.
- */
-*
+ *
+ *
  * SysFs interface :
  *
  * /sys/module/mmc_core/parameters/crc
