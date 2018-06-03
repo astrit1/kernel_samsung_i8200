@@ -1,6 +1,9 @@
 config ZRAM
 	tristate "Compressed RAM block device support"
-	depends on BLOCK && SYSFS
+	# arch dependency is because of the use of local_unmap_kernel_range
+	# in zsmalloc-main.c.
+	# TODO: implement local_unmap_kernel_range in all architecture.
+	depends on BLOCK && STAGING && X86 && SYSFS
 	select ZSMALLOC
 	select LZO_COMPRESS
 	select LZO_DECOMPRESS

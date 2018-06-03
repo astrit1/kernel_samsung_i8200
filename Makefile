@@ -195,7 +195,7 @@ export KBUILD_BUILDHOST := $(SUBARCH)
 #ARCH		?= $(SUBARCH)
 ARCH		?= arm
 #CROSS_COMPILE	?= $(CONFIG_CROSS_COMPILE:"%"=%)
-CROSS_COMPILE	?= /home/astrit/i8200-kernel/toolchain/arm-eabi-4.6/bin/arm-eabi-
+CROSS_COMPILE	?= /home/astrit/kernel_samsung_i8200/toolchain/arm-eabi-4.6/bin/arm-eabi-
 
 # Architecture as present in compile.h
 UTS_MACHINE 	:= $(ARCH)
